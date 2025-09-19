@@ -35,7 +35,7 @@ export default function JoinTeamPage() {
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty mb-8">
               Be part of a dedicated team working to build a stronger, more prosperous community. Together, we can
-              create lasting positive change and make a real difference in people&apos;s lives.
+              create lasting positive change and make a real difference in people's lives.
             </p>
             <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
@@ -154,7 +154,7 @@ export default function JoinTeamPage() {
             <Card className="border-border shadow-lg animate-in slide-in-from-bottom duration-700">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl text-card-foreground">Join Our Team</CardTitle>
-                <CardDescription>Fill out the form below and we&apos;ll get in touch with you soon</CardDescription>
+                <CardDescription>Fill out the form below and we get in touch with you soon</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Personal Information */}
@@ -255,7 +255,7 @@ export default function JoinTeamPage() {
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
-                  We&apos;ll review your application and get back to you within 48 hours. Thank you for your interest in
+                  We review your application and get back to you within 48 hours. Thank you for your interest in
                   making a difference!
                 </p>
               </CardContent>

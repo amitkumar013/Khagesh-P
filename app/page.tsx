@@ -260,7 +260,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm lg:text-base">
-                  Every decision is made with the community&apos;s best interests at heart, ensuring transparency and
+                  Every decision is made with the community best interests at heart, ensuring transparency and
                   accountability in governance.
                 </p>
               </CardContent>
