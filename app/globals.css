@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
   /* Updated color palette for political portfolio theme */
   --background: oklch(1 0 0); /* #ffffff */
@@ -73,7 +75,7 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
-:root {
+@theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
@@ -116,11 +118,9 @@
 
 @layer base {
   * {
-    border-color: var(--border);
-    outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
+    @apply border-border outline-ring/50;
   }
   body {
-    background: var(--background);
-    color: var(--foreground);
+    @apply bg-background text-foreground;
   }
 }
