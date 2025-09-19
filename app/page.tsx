@@ -6,8 +6,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Heart, Users, Target, Award, Mail, Phone, MapPin, Calendar, UserPlus, Menu, X } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { useState, useEffect } from "react"
+import Image from "next/image"
+import khagesh from "../public/Khagesh.jpg"
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -31,12 +32,17 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 lg:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-accent rounded-full flex items-center justify-center shadow-lg ring-2 ring-accent/20">
-                <span className="text-white font-bold text-lg lg:text-xl drop-shadow-sm">KK</span>
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-accent rounded-full flex items-center justify-center shadow-lg ring-2 ring-accent/20 overflow-hidden">
+                <Image
+                  src={khagesh}
+                  alt="Khagesh logo"
+                  width={48}
+                  height={48}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="animate-in slide-in-from-left duration-500">
-                <div className="font-bold text-lg lg:text-xl text-primary">Khagesh Kumar</div>
-                <div className="text-xs text-muted-foreground hidden sm:block">For the People</div>
+                  <Link href="#home" className="font-bold text-lg lg:text-xl text-primary">Khagesh Kumar</Link>
               </div>
             </div>
 
@@ -61,7 +67,7 @@ export default function Home() {
                 Achievements
               </a>
               <a
-                href="#testimonials"
+                href="#community"
                 className="text-muted-foreground hover:text-primary transition-all duration-200 hover:scale-105 text-sm font-medium"
               >
                 Community
@@ -118,7 +124,7 @@ export default function Home() {
                   Achievements
                 </a>
                 <a
-                  href="#testimonials"
+                  href="#community"
                   className="text-muted-foreground hover:text-primary transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -152,23 +158,19 @@ export default function Home() {
       </nav>
 
       {/* Hero Section with Photo First */}
-      <section className="relative pt-20 lg:pt-24 pb-16 lg:pb-24 bg-gradient-to-br from-muted/50 to-background overflow-hidden">
+      <section id="home" className="relative pt-20 lg:pt-24 pb-16 lg:pb-24 bg-gradient-to-br from-muted/50 to-background overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Photo Section - Now at Top */}
           <div className="flex justify-center mb-8 lg:mb-12 animate-in fade-in-50 duration-700">
             <div className="relative">
               <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full bg-muted overflow-hidden shadow-2xl ring-4 ring-accent/20 hover:ring-accent/40 transition-all duration-500 hover:scale-105">
-                <img
-                  src="/leader-khagesh-kum.jpg"
-                  alt="Khagesh Kumar - Leader"
+                <Image
+                  src={khagesh}
+                  alt="Khagesh Kumar"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 lg:-bottom-4 lg:-right-4 bg-accent text-accent-foreground p-3 lg:p-4 rounded-xl shadow-lg animate-in slide-in-from-bottom-4 duration-700 delay-300">
-                <div className="text-xl lg:text-2xl font-bold">12+</div>
-                <div className="text-xs lg:text-sm">Years of Service</div>
-              </div>
-            </div>
+             </div>  
           </div>
 
           {/* Content Section */}
@@ -238,7 +240,7 @@ export default function Home() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-200">
+            <Card className="border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-200">
               <CardHeader>
                 <Target className="w-8 h-8 text-accent mb-2" />
                 <CardTitle className="text-card-foreground text-lg">Vision-Driven Leadership</CardTitle>
@@ -251,7 +253,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-400">
+            <Card className="border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-400">
               <CardHeader>
                 <Users className="w-8 h-8 text-accent mb-2" />
                 <CardTitle className="text-card-foreground text-lg">Community First</CardTitle>
@@ -264,7 +266,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-600 sm:col-span-2 lg:col-span-1">
+            <Card className="border-border hover:shadow-lg transition-all hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-600 sm:col-span-2 lg:col-span-1">
               <CardHeader>
                 <Award className="w-8 h-8 text-accent mb-2" />
                 <CardTitle className="text-card-foreground text-lg">Proven Results</CardTitle>
@@ -364,28 +366,28 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-200">
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-200">
               <CardContent className="pt-4 lg:pt-6">
                 <div className="text-2xl lg:text-3xl font-bold text-accent mb-1 lg:mb-2">500+</div>
                 <p className="text-muted-foreground text-xs lg:text-sm">Jobs Created</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-300">
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-300">
               <CardContent className="pt-4 lg:pt-6">
                 <div className="text-2xl lg:text-3xl font-bold text-accent mb-1 lg:mb-2">12</div>
                 <p className="text-muted-foreground text-xs lg:text-sm">Schools Improved</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-400">
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-400">
               <CardContent className="pt-4 lg:pt-6">
                 <div className="text-2xl lg:text-3xl font-bold text-accent mb-1 lg:mb-2">₹50M</div>
                 <p className="text-muted-foreground text-xs lg:text-sm">Infrastructure Investment</p>
               </CardContent>
             </Card>
 
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-500">
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 hover:scale-105 animate-in slide-in-from-bottom duration-700 delay-500">
               <CardContent className="pt-4 lg:pt-6">
                 <div className="text-2xl lg:text-3xl font-bold text-accent mb-1 lg:mb-2">25+</div>
                 <p className="text-muted-foreground text-xs lg:text-sm">Community Programs</p>
@@ -395,62 +397,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-20">
+      {/* My Team Section */}
+      <section id="community" className="py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-in fade-in-50 duration-700">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6 text-balance">What Our Community Says</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              Hear from the people who have experienced the positive impact of dedicated leadership.
+          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16 animate-in fade-in-50 duration-700">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-4 lg:mb-6 text-balance">
+              <span className="inline-block animate-in slide-in-from-bottom duration-600">Meet</span>{" "}
+              <span className="inline-block animate-in slide-in-from-top duration-600 delay-200 text-accent">
+                Our Team
+              </span>
+            </h2>
+            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed text-pretty animate-in fade-in-50 duration-700 delay-300">
+              Dedicated professionals working together to serve our community with passion and expertise.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in slide-in-from-left duration-700 delay-200">
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-4 italic">
-                  "Khagesh Kumar's dedication to our community is unmatched. His initiatives have brought real change to
-                  our neighborhood."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-muted rounded-full"></div>
-                  <div>
-                    <div className="font-semibold text-card-foreground">Priya Sharma</div>
-                    <div className="text-sm text-muted-foreground">Local Business Owner</div>
-                  </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-200">
+              <CardContent className="pt-4 lg:pt-6">
+                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
+                  <Image
+                    src={khagesh}
+                    alt="Priya Sharma"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Priya Sharma</h3>
+                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Campaign Manager</p>
+                <p className="text-xs text-muted-foreground hidden lg:block">
+                  Strategic planning and community outreach specialist
+                </p>
               </CardContent>
             </Card>
 
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in slide-in-from-bottom duration-700 delay-300">
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-4 italic">
-                  "His vision for education reform has transformed our children's learning experience. We're grateful
-                  for his leadership."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-muted rounded-full"></div>
-                  <div>
-                    <div className="font-semibold text-card-foreground">Rajesh Patel</div>
-                    <div className="text-sm text-muted-foreground">Parent & Teacher</div>
-                  </div>
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-300">
+              <CardContent className="pt-4 lg:pt-6">
+                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
+                  <Image
+                    src={khagesh}
+                    alt="Rajesh Patel"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Rajesh Patel</h3>
+                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Policy Advisor</p>
+                <p className="text-xs text-muted-foreground hidden lg:block">Education and healthcare policy expert</p>
               </CardContent>
             </Card>
 
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in slide-in-from-right duration-700 delay-400">
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-4 italic">
-                  "A true representative of the people. Khagesh listens, acts, and delivers on his promises
-                  consistently."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-muted rounded-full"></div>
-                  <div>
-                    <div className="font-semibold text-card-foreground">Dr. Meera Singh</div>
-                    <div className="text-sm text-muted-foreground">Community Leader</div>
-                  </div>
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-400">
+              <CardContent className="pt-4 lg:pt-6">
+                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
+                  <Image
+                    src={khagesh}
+                    alt="Dr. Meera Singh"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Dr. Meera Singh</h3>
+                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Communications Director</p>
+                <p className="text-xs text-muted-foreground hidden lg:block">Media relations and public engagement</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-border hover:shadow-lg transition-all hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-500">
+              <CardContent className="pt-4 lg:pt-6">
+                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
+                  <Image
+                  src={khagesh}
+                  alt="Amit Kumar" 
+                  className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Amit Kumar</h3>
+                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Volunteer Coordinator</p>
+                <p className="text-xs text-muted-foreground hidden lg:block">
+                  Community engagement and grassroots organizing
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -568,7 +590,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <Card className="border-border hover:shadow-lg transition-all duration-300 animate-in slide-in-from-right duration-700 delay-400">
+              <Card className="border-border hover:shadow-lg transition-all animate-in slide-in-from-right duration-700 delay-400">
                 <CardHeader>
                   <CardTitle className="text-card-foreground">Send a Message</CardTitle>
                   <CardDescription>Share your thoughts, concerns, or suggestions directly with me.</CardDescription>
@@ -594,85 +616,6 @@ export default function Home() {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* My Team Section */}
-      <section id="team" className="py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16 animate-in fade-in-50 duration-700">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-4 lg:mb-6 text-balance">
-              <span className="inline-block animate-in slide-in-from-bottom duration-600">Meet</span>{" "}
-              <span className="inline-block animate-in slide-in-from-top duration-600 delay-200 text-accent">
-                Our Team
-              </span>
-            </h2>
-            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed text-pretty animate-in fade-in-50 duration-700 delay-300">
-              Dedicated professionals working together to serve our community with passion and expertise.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-200">
-              <CardContent className="pt-4 lg:pt-6">
-                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
-                  <img
-                    src="/professional-woman-campaign-manager.jpg"
-                    alt="Priya Sharma"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Priya Sharma</h3>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Campaign Manager</p>
-                <p className="text-xs text-muted-foreground hidden lg:block">
-                  Strategic planning and community outreach specialist
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-300">
-              <CardContent className="pt-4 lg:pt-6">
-                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
-                  <img
-                    src="/professional-man-policy-advisor.jpg"
-                    alt="Rajesh Patel"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Rajesh Patel</h3>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Policy Advisor</p>
-                <p className="text-xs text-muted-foreground hidden lg:block">Education and healthcare policy expert</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-400">
-              <CardContent className="pt-4 lg:pt-6">
-                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
-                  <img
-                    src="/professional-woman-communications-director.jpg"
-                    alt="Dr. Meera Singh"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Dr. Meera Singh</h3>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Communications Director</p>
-                <p className="text-xs text-muted-foreground hidden lg:block">Media relations and public engagement</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-500">
-              <CardContent className="pt-4 lg:pt-6">
-                <div className="w-16 h-16 lg:w-24 lg:h-24 bg-muted rounded-full mx-auto mb-3 lg:mb-4 overflow-hidden">
-                  <img src="/volunteer-coordinator.png" alt="Amit Kumar" className="w-full h-full object-cover" />
-                </div>
-                <h3 className="font-semibold text-card-foreground mb-1 text-sm lg:text-base">Amit Kumar</h3>
-                <p className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">Volunteer Coordinator</p>
-                <p className="text-xs text-muted-foreground hidden lg:block">
-                  Community engagement and grassroots organizing
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
