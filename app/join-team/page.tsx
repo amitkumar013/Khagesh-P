@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -65,7 +66,7 @@ export default function JoinTeamPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-200">
+            <Card className="border-border hover:shadow-lg transition-all hover:duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-200">
               <CardHeader>
                 <Users className="w-8 h-8 text-accent mb-2" />
                 <CardTitle className="text-card-foreground">Campaign Volunteer</CardTitle>
@@ -91,7 +92,7 @@ export default function JoinTeamPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-300">
+            <Card className="border-border hover:shadow-lg transition-all hover:duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-300">
               <CardHeader>
                 <Target className="w-8 h-8 text-accent mb-2" />
                 <CardTitle className="text-card-foreground">Event Coordinator</CardTitle>
@@ -117,7 +118,7 @@ export default function JoinTeamPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-400">
+            <Card className="border-border hover:shadow-lg transition-all hover:duration-300 hover:-translate-y-2 animate-in slide-in-from-bottom duration-700 delay-400">
               <CardHeader>
                 <Heart className="w-8 h-8 text-accent mb-2" />
                 <CardTitle className="text-card-foreground">Digital Advocate</CardTitle>
